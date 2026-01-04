@@ -1,17 +1,9 @@
 {
-  "name": "react-native-rn-is-tf",
+  "name": "rn-is-tf",
   "version": "0.1.0",
   "description": "is testflight check",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
-  "exports": {
-    ".": {
-      "source": "./src/index.tsx",
-      "types": "./lib/typescript/src/index.d.ts",
-      "default": "./lib/module/index.js"
-    },
-    "./package.json": "./package.json"
-  },
   "files": [
     "src",
     "lib",
@@ -32,8 +24,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace react-native-rn-is-tf-example",
-    "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
+    "clean": "del-cli android/build lib",
     "prepare": "bob build",
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\""
@@ -45,14 +36,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kostia-lev/react-native-rn-is-tf.git"
+    "url": "git+https://github.com/kostia-lev/rn-is-tf.git"
   },
   "author": "Konstantin Vahrushev <kostia_lev@hotmail.com> (https://github.com/kostia-lev)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kostia-lev/react-native-rn-is-tf/issues"
+    "url": "https://github.com/kostia-lev/rn-is-tf/issues"
   },
-  "homepage": "https://github.com/kostia-lev/react-native-rn-is-tf#readme",
+  "homepage": "https://github.com/kostia-lev/rn-is-tf#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -78,9 +69,6 @@
     "react": "*",
     "react-native": "*"
   },
-  "workspaces": [
-    "example"
-  ],
   "packageManager": "yarn@4.11.0",
   "react-native-builder-bob": {
     "source": "src",

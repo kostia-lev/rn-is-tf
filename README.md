@@ -1,12 +1,13 @@
-# react-native-rn-is-tf
+# rn-is-tf
 
-is testflight check
+Is testflight check for iOS. Returns false on Android
 
 ## Installation
 
 
 ```sh
-npm install react-native-rn-is-tf
+npm install rn-is-tf
+cd ios. && pod install
 ```
 
 
@@ -14,11 +15,11 @@ npm install react-native-rn-is-tf
 
 
 ```js
-import { multiply } from 'react-native-rn-is-tf';
+import { isTestFlight } from 'rn-is-tf';
 
 // ...
 
-const result = multiply(3, 7);
+const isTestflight = isTestFlight();
 ```
 
 

@@ -1,20 +1,15 @@
-require "json"
-
-package = JSON.parse(File.read(File.join(__dir__, "package.json")))
-
 Pod::Spec.new do |s|
   s.name         = "RnIsTf"
-  s.version      = package["version"]
-  s.summary      = package["description"]
-  s.homepage     = package["homepage"]
-  s.license      = package["license"]
-  s.authors      = package["author"]
+  s.version      = "0.1.0"
+  s.summary      = "Check if app runs via TestFlight"
+  s.homepage     = "https://vahrushev.info"
+  s.license      = { :type => "MIT" }
+  s.author       = { "You" => "kostia_lev@hotmail.com" }
 
-  s.platforms    = { :ios => min_ios_version_supported }
-  s.source       = { :git => "https://github.com/kostia-lev/react-native-rn-is-tf.git", :tag => "#{s.version}" }
+  s.platforms    = { :ios => "12.0" }
+  s.source       = { :path => "." }
 
-  s.source_files = "ios/**/*.{h,m,mm,swift,cpp}"
-  s.private_header_files = "ios/**/*.h"
+  s.source_files = "ios/**/*.{h,m}"
 
-  install_modules_dependencies(s)
+  s.dependency "React-Core"
 end

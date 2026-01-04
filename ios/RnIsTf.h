@@ -1,5 +1,4 @@
-#import <RnIsTfSpec/RnIsTfSpec.h>
+#import <React/RCTBridgeModule.h>
 
-@interface RnIsTf : NSObject <NativeRnIsTfSpec>
-
+@interface RnIsTf : NSObject <RCTBridgeModule>
 @end

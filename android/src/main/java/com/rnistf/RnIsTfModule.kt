@@ -1,21 +1,22 @@
 package com.rnistf
 
-import com.facebook.react.ReactPackage
-import com.facebook.react.bridge.NativeModule
+import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.uimanager.ViewManager
+import com.facebook.react.bridge.ReactContextBaseJavaModule
+import com.facebook.react.bridge.ReactMethod
 
-class RnIsTfPackage : ReactPackage {
+class RnIsTfModule(
+  reactContext: ReactApplicationContext
+) : ReactContextBaseJavaModule(reactContext) {
 
-  override fun createNativeModules(
-    reactContext: ReactApplicationContext
-  ): List<NativeModule> {
-    return listOf(RnIsTfModule(reactContext))
+  override fun getName(): String = NAME
+
+  @ReactMethod
+  fun isTestFlight(promise: Promise) {
+    promise.resolve(false)
   }
 
-  override fun createViewManagers(
-    reactContext: ReactApplicationContext
-  ): List<ViewManager<*, *>> {
-    return emptyList()
+  companion object {
+    const val NAME = "RnIsTf"
   }
 }

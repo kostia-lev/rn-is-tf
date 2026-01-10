@@ -1,23 +1,21 @@
 package com.rnistf
 
+import com.facebook.react.ReactPackage
+import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.module.annotations.ReactModule
+import com.facebook.react.uimanager.ViewManager
 
-@ReactModule(name = RnIsTfModule.NAME)
-class RnIsTfModule(reactContext: ReactApplicationContext) :
-  NativeRnIsTfSpec(reactContext) {
+class RnIsTfPackage : ReactPackage {
 
-  override fun getName(): String {
-    return NAME
+  override fun createNativeModules(
+    reactContext: ReactApplicationContext
+  ): List<NativeModule> {
+    return listOf(RnIsTfModule(reactContext))
   }
 
-  // Example method
-  // See https://reactnative.dev/docs/native-modules-android
-  override fun multiply(a: Double, b: Double): Double {
-    return a * b
-  }
-
-  companion object {
-    const val NAME = "RnIsTf"
+  override fun createViewManagers(
+    reactContext: ReactApplicationContext
+  ): List<ViewManager<*, *>> {
+    return emptyList()
   }
 }

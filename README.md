@@ -7,7 +7,7 @@ Is testflight check for iOS. Returns false on Android
 
 ```sh
 npm install rn-is-tf
-cd ios. && pod install
+cd ios && pod install
 ```
 
 
